@@ -1,7 +1,11 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
 import Base from '../layouts/Base.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const photos = [
+
+// 精選照片（放最前面，有說明）
+const curated = [
   { src: '/images/草地.jpg', cap: '青青草地' },
   { src: '/images/下雨天.jpg', cap: '下雨天躲桌下' },
   { src: '/images/床上.jpg', cap: '床上耍廢' },
@@ -9,18 +13,35 @@ const photos = [
   { src: '/images/玩具.jpg', cap: '玩具時間' },
   { src: '/images/醜.jpg', cap: '耍醜時刻' },
 ];
+const curatedNames = new Set(curated.map((p) => p.src.split('/').pop()));
+
+// 從檔名取出說明：小乖-趴地-01.jpg -> 趴地
+const fromName = (f) =>
+  f.replace(/\.[^.]+$/, '').replace(/^小乖-/, '').replace(/-\d+$/, '');
+
+// 自動掃描 public/images，之後新增照片會自動出現
+const dir = path.join(process.cwd(), 'public', 'images');
+const rest = fs
+  .readdirSync(dir)
+  .filter((f) => /\.(jpe?g|png|gif)$/i.test(f))
+  .filter((f) => f !== 'logo.png' && !/250\.jpg$/i.test(f))
+  .filter((f) => !curatedNames.has(f))
+  .sort()
+  .map((f) => ({ src: '/images/' + f, cap: fromName(f) }));
+
+const photos = [...curated, ...rest];
 ---
 <Base title="小乖的照片" description="小乖的生活照片集" current="photos">
   <section class="hero">
     <h1>照片集 📷</h1>
-    <p>點圖片可看大圖</p>
+    <p>點圖片可看大圖（共 {photos.length} 張）</p>
   </section>
 
   <div class="grid">
     {photos.map((p) => (
       <a class="photo" href={base + p.src} target="_blank" rel="noopener">
-        <img src={base + p.src} alt={p.cap} loading="lazy" />
-        <figcaption>{p.cap}</figcaption>
+        <img src={base + p.src} alt={p.cap || '小乖'} loading="lazy" />
+        {p.cap && <figcaption>{p.cap}</figcaption>}
       </a>
     ))}
   </div>
