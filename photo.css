@@ -1,0 +1,178 @@
+/* || 一般設置 */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  background-color: beige;
+}
+
+body {
+  width: 80%;
+  min-width: 800px;
+  margin: 0 auto;
+  background-color: beige;
+}
+
+/* || 排版 */
+
+h1, h2{
+  font-family: 'Mukta', sans-serif;
+  color:cadetblue;  
+  font-weight:bolder;
+}
+
+p, li {
+  font-family: 'Zen Loop', cursive;
+  color:midnightblue;
+  font-size: 2.0rem;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
+h2 {
+  display:grid;
+  font-size: 3rem;
+  text-align: left;
+  text-decoration-line:underline;  
+}
+
+p, li {
+  font-size: 2.4rem;/*相對於root層級(html,此為10px)的文字大小，故為24px*/
+  line-height: 1.5;
+}
+
+/* || 標題布局 */
+
+header {
+  margin-bottom: 10px;
+  display: flex;
+  flex-flow: row wrap;/*換行*/
+}
+
+main, header, nav, main > div, footer{
+  background-color: rgba(118, 228, 173, 0.3);
+  padding: 1%;
+}
+
+h1 {
+  flex: 5;
+  text-transform: uppercase;
+}
+
+header img {
+  display: block;
+  height: 100px;
+  padding-top: 18px;
+  padding-right: 20px;
+  padding-bottom: 15px;
+}
+
+nav {
+  height: 50px;
+  flex: 100%;
+  display: flex;
+}
+
+nav ul {
+  padding: 0;
+  list-style-type: none;
+  flex: 2;
+  display: flex;
+}
+
+nav li {
+  display: inline;
+  text-align: center;
+  flex: 1;
+}
+
+nav a, nav span {
+  display: inline-block;
+  font-size: 2rem;
+  height: 3rem;
+  line-height: 1.7;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+
+/* || 主體布局 */
+
+main {
+  display: grid;
+}
+
+footer {
+  margin-top: 10px;
+  padding-top:5px;
+  padding-bottom:5px;
+  text-align: center;
+  font-size: 5px;
+}
+
+
+div img{
+  /*display: inline;*/
+	height: 300px;
+	/*float: left;
+	padding-right:100px;*/
+}
+
+
+
+html {
+  font-family: sans-serif;
+}
+
+/*
+.box1{
+  display:inline;
+  padding-left:200px;
+  padding-top:0px;
+}
+
+.box2{
+  display:inline;
+  padding-left:150px;
+}
+
+.box3{
+  display:inline;
+  padding-left:420px;
+
+}
+
+.box4{
+  display:inline;
+  padding-left:250px;
+}*/
+/*
+.container{
+  display: grid;
+  grid-template-columns:50px 300px;
+  grid-template-rows: 300px 300px;
+  grid-gap:30px 400px;
+}*/
+
+.box1{
+  float:left;
+  /*background-color:peachpuff;*/
+  padding:0px 30px 0px 30px;
+  margin: 0px 150px 0px 190px;
+  font-size:15px;
+  text-align:center;
+}
+
+.box2{
+  float:left;
+  margin-left: 200px;
+  margin: 0px 100px 0px 165px;
+}

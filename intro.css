@@ -1,0 +1,183 @@
+/* || 一般設置 */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  background-color: beige;
+}
+
+body {
+  width: 80%;
+  min-width: 800px;
+  margin: 0 auto;
+  background-color: beige;
+}
+
+/* || 排版 */
+
+h1, h2{
+  font-family: 'Mukta', sans-serif;
+  color:cadetblue;  
+  font-weight:bolder;
+}
+
+p, li {
+  font-family: 'Zen Loop', cursive;
+  color:midnightblue;
+  font-size: 2.0rem;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+  text-decoration-line:underline;
+}
+
+/* || 標題布局 */
+
+header {
+  margin-bottom: 10px;
+  display: flex;
+  flex-flow: row wrap;/*換行*/
+}
+
+main, header, nav, article, aside, footer, section {
+  background-color: rgba(118, 228, 173, 0.3);
+  padding: 1%;
+}
+
+h1 {
+  flex: 5;
+  text-transform: uppercase;
+}
+
+header img {
+  display: block;
+  height: 100px;
+  padding-top: 18px;
+  padding-right: 20px;
+  padding-bottom: 15px;
+}
+
+nav {
+  height: 50px;
+  flex: 100%;
+  display: flex;
+}
+
+nav ul {
+  padding: 0;
+  list-style-type: none;
+  flex: 2;
+  display: flex;
+}
+
+nav li {
+  display: inline;
+  text-align: center;
+  flex: 1;
+}
+
+nav a, nav span {
+  display: inline-block;
+  font-size: 2rem;
+  height: 3rem;
+  line-height: 1.7;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+
+/* || 主體布局 */
+
+main {
+  display: flex;
+}
+
+article, section {
+  flex: 4;
+}
+
+article p{
+	font-size:2.1rem;
+	padding-left:50px;
+}
+
+aside {
+  flex: 1;
+  margin-left: 10px;
+  padding: 1%;
+}
+
+aside a {
+  display: block;
+  float: left;/*沿左側放*/
+  width: 50%;
+}
+
+aside img {
+  max-width: 100%;
+}
+
+
+footer {
+  margin-top: 10px;
+  padding-top:5px;
+  padding-bottom:5px;
+  text-align: center;
+  font-size: 5px;
+}
+
+article img{
+	display: inline;
+	height: 410px;
+	width:500px;
+	float: right;
+	padding-top:130px;
+	padding-right:50px;
+}
+
+/* || 表格 */
+
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(200,200,200);
+  letter-spacing: 1px;
+  font-size: 2.0rem;
+  margin-left: 100px;
+}
+
+td, th {
+  border: 1px solid rgb(190,190,190);
+  padding: 10px 20px;
+}
+
+th {
+  background-color: rgb(235,235,235);
+}
+
+td {
+  text-align: center;
+}
+
+tr:nth-child(even) td {
+  background-color: rgb(250,250,250);
+}
+
+tr:nth-child(odd) td {
+  background-color: rgb(245,245,245);
+}
+
+caption {
+  padding: 10px;
+}
