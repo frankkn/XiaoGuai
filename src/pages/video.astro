@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const clips = [
+  { src: '/videos/eat.mp4', cap: '吃皮鞋' },
+  { src: '/videos/walk.mp4', cap: '晚上去公園的路上' },
+];
+---
+<Base title="小乖的生活影片" description="小乖的生活影片" current="video">
+  <section class="hero">
+    <h1>生活影片 🎬</h1>
+  </section>
+
+  <div class="videos">
+    {clips.map((c) => (
+      <figure>
+        <video controls preload="metadata" src={base + c.src}></video>
+        <figcaption>{c.cap}</figcaption>
+      </figure>
+    ))}
+  </div>
+</Base>

@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+const qa = [
+  { q: '小乖的性別？', a: '小乖是一隻非常溫馴的母狗唷！' },
+  { q: '小乖出沒的地區？', a: '台中市的山西公園～' },
+];
+---
+<Base title="聯繫資訊" description="小乖的 Q&A 與聯絡方式" current="contact">
+  <section class="hero">
+    <h1>小乖 Q &amp; A 💬</h1>
+    <p>點題目可以看答案</p>
+  </section>
+
+  {qa.map((item) => (
+    <details>
+      <summary>{item.q}</summary>
+      <p>{item.a}</p>
+    </details>
+  ))}
+
+  <details>
+    <summary>小乖的聯絡方式？</summary>
+    <p>直接私訊 FB：<a href="https://www.facebook.com/XiaoGuaiGuoShi" target="_blank" rel="noopener">小乖果實</a></p>
+  </details>
+</Base>

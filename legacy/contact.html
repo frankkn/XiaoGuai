@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="小乖">
+		<meta name="description" content="小乖吃東西的影片">
+		<title>小乖果實</title>
+		<!--指定螢幕寬度為裝置寬度，畫面載入初始縮放比例 100%-->
+		<meta name="viewport" content="width=device-width, initial-scale=1" >
+		<link href="contact.css" rel="stylesheet" type="text/css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+	</head>
+	<body>
+		<header>
+			<h1>小乖果實</h1>
+			<img src="images/logo.png" alt="小乖趴在藍色毯子上">
+			<nav>
+				<ul>
+					<li><a href="index.html">主頁</a></li>
+					<li><a href="intro.html">介紹</a></li>
+					<li><a href="photos.html">照片</a></li>
+					<li><a href="video.html">影片</a></li>
+					<li><span>聯繫資訊</span></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<article>
+				<h2>小乖 Q & A(點擊題目可以看答案)</h2>
+				<div id="q1">小乖的性別?</div>
+				<div id="a1">小乖是一隻非常溫馴的母狗唷 !</div>
+				<br>
+				<br>
+				<div id="q2">小乖出沒的地區?</div>
+				<div id="a2">台中市的山西公園 ~ </div>
+				<br>
+				<br>
+				<div id="q3">小乖的聯絡方式</div>
+				<div id="a3">直接私訊FB:<a href="https://www.facebook.com/XiaoGuaiGuoShi">小乖果實</a></div>
+
+			</article>
+
+		</main>
+		<footer>
+			<p>Written by Frank Yang</p>
+		</footer>
+		<script>
+			$(document).ready(function(){
+				$("#q1").click(function(){
+					$("#a1").slideToggle(1000);
+				})
+				$("#q2").click(function(){
+					$("#a2").slideToggle(1000);
+				})
+				$("#q3").click(function(){
+					$("#a3").slideToggle(1000);
+				})
+			})
+
+		</script>
+	</body>
+
+
+
+</html>

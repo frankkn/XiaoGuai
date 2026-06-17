@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const photos = [
+  { src: '/images/草地.jpg', cap: '青青草地' },
+  { src: '/images/下雨天.jpg', cap: '下雨天躲桌下' },
+  { src: '/images/床上.jpg', cap: '床上耍廢' },
+  { src: '/images/趴地.jpg', cap: '趴地放空' },
+  { src: '/images/玩具.jpg', cap: '玩具時間' },
+  { src: '/images/醜.jpg', cap: '耍醜時刻' },
+];
+---
+<Base title="小乖的照片" description="小乖的生活照片集" current="photos">
+  <section class="hero">
+    <h1>照片集 📷</h1>
+    <p>點圖片可看大圖</p>
+  </section>
+
+  <div class="grid">
+    {photos.map((p) => (
+      <a class="photo" href={base + p.src} target="_blank" rel="noopener">
+        <img src={base + p.src} alt={p.cap} loading="lazy" />
+        <figcaption>{p.cap}</figcaption>
+      </a>
+    ))}
+  </div>
+</Base>
