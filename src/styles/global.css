@@ -91,6 +91,22 @@ nav .current { background: var(--accent); color: #fff; }
 }
 h2 { color: var(--accent-dark); margin-top: 0; }
 
+/* 首頁：左文右圖 */
+.intro-card { display: flex; align-items: center; gap: 28px; }
+.intro-text { flex: 1; min-width: 0; }
+.intro-text > :first-child { margin-top: 0; }
+.intro-text > :last-child { margin-bottom: 0; }
+.intro-photo {
+  width: 280px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+@media (max-width: 640px) {
+  .intro-card { flex-direction: column; }
+  .intro-photo { width: 100%; max-width: 320px; }
+}
+
 .highlight { color: var(--accent-dark); font-weight: 700; }
 
 /* photo grid */
