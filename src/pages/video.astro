@@ -13,7 +13,7 @@ const fromName = (f) =>
   f.replace(/\.[^.]+$/, '').replace(/^小乖-/, '');
 
 // 要排到最後面的影片（依檔名）
-const pinLast = ['小乖-你也要拍嗎.mp4', '小乖-被捉弄.mp4'];
+const pinLast = ['小乖-被捉弄.mp4'];
 
 // 自動掃描 public/videos，之後新增影片會自動出現
 const dir = path.join(process.cwd(), 'public', 'videos');
