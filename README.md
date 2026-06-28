@@ -14,18 +14,6 @@
 - 影片 — 生活影片
 - 聯繫資訊 — Q&A 與 FB 連結
 
-## 本機開發
-
-```bash
-npm install
-npm run dev      # 本機預覽 http://localhost:4321/XiaoGuai/
-npm run build    # 產生靜態網站到 dist/
-```
-
-## 部署
-
-push 到 `master` 後，GitHub Actions（`.github/workflows/deploy.yml`）自動 build 並部署到 GitHub Pages。
-
 ## 結構
 
 - `src/pages/` — 5 個頁面
